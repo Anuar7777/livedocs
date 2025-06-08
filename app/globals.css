@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "../styles/dark-theme.css";
 
+@import "@liveblocks/react-ui/styles.css";
+@import "@liveblocks/react-lexical/styles.css";
+
 @theme {
   --color-blue-100: #b4c6ee;
   --color-blue-400:  #417BFF
