@@ -10,22 +10,30 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { RoomProvider, ClientSideSuspense } from "@liveblocks/react/suspense";
+import ActiveCollaborators from "./ActiveCollaborators";
 
-const CollaborativeRoom = () => {
+const CollaborativeRoom = ({
+  roomId,
+  roomMetadata,
+}: CollaborativeRoomProps) => {
   return (
-    <RoomProvider id="my-room">
+    <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<div>Loading…</div>}>
         <div className="collaborative-room">
           <Header>
             <div className="flex w-fit items-center justify-center gap-2">
               <p className="document-title">Share</p>
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
+
+              <div className="flex w-full justify-end gap-2 sm:gap-3">
+                <ActiveCollaborators />
+                <SignedOut>
+                  <SignInButton />
+                  <SignUpButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </div>
             </div>
           </Header>
 
