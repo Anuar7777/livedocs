@@ -23,6 +23,6 @@ export const getClerkUsers = async ({ userIds }: { userIds: string[] }) => {
 
     return parseStringify(sortedUsers);
   } catch (error) {
-    console.log;
+    console.log(`Error fetching users: ${error}`);
   }
 };
