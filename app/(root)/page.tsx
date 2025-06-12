@@ -1,6 +1,6 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
+import DeleteModal from "@/components/DeleteModal";
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { getAllDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
 import { SignedIn, UserButton } from "@clerk/nextjs";
@@ -8,7 +8,6 @@ import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import React from "react";
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -42,7 +41,9 @@ const Home = async () => {
           <ul className="document-ul">
             {roomDocuments.data.map(({ id, metadata, createdAt }: any) => (
               <li key={id} className="document-list-item">
-                <Link href={`/documents/${id}`}>
+                <Link
+                  href={`/documents/${id}`}
+                  className="flex flex-1 gap-4 items-center">
                   <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
                     <Image
                       src="/assets/icons/doc.svg"
@@ -51,7 +52,7 @@ const Home = async () => {
                       height={40}
                     />
                   </div>
-                  <div className="space-y-l">
+                  <div className="space-y-1">
                     <p className="line-clamp-1 text-lg">{metadata.title}</p>
                     <p className="text-sm font-light text-blue-100">
                       Created about {dateConverter(createdAt)}
@@ -59,7 +60,7 @@ const Home = async () => {
                   </div>
                 </Link>
 
-                {/* TODO: Delete Button */}
+                <DeleteModal roomId={id} />
               </li>
             ))}
           </ul>
