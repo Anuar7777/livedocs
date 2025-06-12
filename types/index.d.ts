@@ -45,3 +45,35 @@ declare type CollaborativeRoomProps = {
   users: User[];
   currentUserType: UserType;
 };
+
+declare type ThreadWrapperProps = { thread: ThreadData<BaseMetadata> };
+
+declare type DeleteModalProps = { roomId: string };
+
+declare type AccessType = ["room:write"] | ["room:read", "room:presence:write"];
+
+declare type RoomMetadata = {
+  creatorId: string;
+  email: string;
+  title: string;
+};
+
+declare type ShareDocumentDialogProps = {
+  roomId: string;
+  collaborators: User[];
+  creatorId: string;
+  currentUserType: UserType;
+};
+
+declare type UserTypeSelectorParams = {
+  userType: string;
+  setUserType: React.Dispatch<React.SetStateAction<UserType>>;
+  onClickHandler?: (value: string) => void;
+};
+
+declare type ShareDocumentParams = {
+  roomId: string;
+  email: string;
+  userType: UserType;
+  updatedBy: User;
+};

@@ -7,24 +7,24 @@
 
 @theme {
   --color-blue-100: #b4c6ee;
-  --color-blue-400:  #417BFF
-  --color-blue-500:  #3371FF;
+  --color-blue-400: #417bff;
+  --color-blue-500: #3371ff;
 
-  --color-red-400:  #DD4F56;
-  --color-red-500:  #DC4349;
+  --color-red-400: #dd4f56;
+  --color-red-500: #dc4349;
 
-  --color-dark-100: #09111F;
-  --color-dark-200: #0B1527;
-  --color-dark-300: #0F1C34;
-  --color-dark-350: #12213B;
-  --color-dark-400: #27344D;
-  --color-dark-500: #2E3D5B;
-  
-  --color-doc: url("/assets/images/doc.png")
-  --color-modal: url("/assets/images/modal.png")
+  --color-dark-100: #09111f;
+  --color-dark-200: #0b1527;
+  --color-dark-300: #0f1c34;
+  --color-dark-350: #12213b;
+  --color-dark-400: #27344d;
+  --color-dark-500: #2e3d5b;
+
+  --color-doc: url("/assets/images/doc.png");
+  --color-modal: url("/assets/images/modal.png");
 
   --container-2xl: 1400px;
-  --container-xs: 360px
+  --container-xs: 360px;
 }
 
 @layer base {
@@ -74,7 +74,7 @@
   }
 
   .shad-dialog button {
-    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0;
+    @apply cursor-pointer focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0;
   }
 
   .shad-select {
@@ -101,7 +101,7 @@
     @apply relative inline-flex size-8 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50;
   }
 
-/*  custom-scrollbar custom-scrollbar  */ 
+  /*  custom-scrollbar custom-scrollbar  */
   .toolbar-wrapper {
     @apply z-50 w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm;
   }
@@ -164,7 +164,7 @@
 
   .comment-thread {
     @apply w-full max-w-[800px] border shadow-sm lg:w-[350px] transition-all  border-dark-300 bg-dark-200;
-  } 
+  }
 
   .loader {
     @apply flex size-full h-screen items-center justify-center gap-3 text-white;
