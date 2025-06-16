@@ -17,7 +17,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import UserTypeSelector from "./UserTypeSelector";
 import Collaborator from "./Collaborator";
-import { updateDocumentAccesses } from "@/lib/actions/room.actions";
+import { updateDocumentAccess } from "@/lib/actions/room.actions";
 
 const ShareModal = ({
   roomId,
@@ -36,7 +36,7 @@ const ShareModal = ({
   const shareDocumentHandler = async () => {
     setLoading(true);
 
-    await updateDocumentAccesses({
+    await updateDocumentAccess({
       roomId,
       email,
       userType,

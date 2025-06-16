@@ -4,7 +4,7 @@ import UserTypeSelector from "./UserTypeSelector";
 import { Button } from "./ui/button";
 import {
   removeCollaborator,
-  updateDocumentAccesses,
+  updateDocumentAccess,
 } from "@/lib/actions/room.actions";
 
 const Collaborator = ({
@@ -20,7 +20,7 @@ const Collaborator = ({
   const shareDocumentHandler = async (type: string) => {
     setLoading(true);
 
-    await updateDocumentAccesses({
+    await updateDocumentAccess({
       roomId,
       email,
       userType: type as UserType,
