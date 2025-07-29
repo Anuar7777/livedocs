@@ -1,12 +1,18 @@
-import { SignUp } from "@clerk/nextjs";
-import React from "react";
+import { SignUp } from '@clerk/nextjs'
+import React from 'react'
 
 const SignUpPage = () => {
-  return (
-    <main className="auth-page">
-      <SignUp />
-    </main>
-  );
-};
+	return (
+		<main className='auth-page'>
+			<SignUp
+				appearance={{
+					elements: {
+						footer: 'hidden'
+					}
+				}}
+			/>
+		</main>
+	)
+}
 
-export default SignUpPage;
+export default SignUpPage
